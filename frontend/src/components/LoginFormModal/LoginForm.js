@@ -29,6 +29,7 @@ function LoginForm() {
       </ul>
       <label>
         <input
+          className="form-input"
           placeholder="Username or Email"
           type="text"
           value={credential}
@@ -46,6 +47,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit" className="form-button">Log In</button>
+      <button type="submit" className="demo-button">Demo</button>
     </form>
   );
 }
