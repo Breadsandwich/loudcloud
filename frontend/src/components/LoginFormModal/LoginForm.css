@@ -1,12 +1,49 @@
 
+form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
 .form-button {
     border: 0.5px black solid;
-    border-radius: 10% / 50%;
     position: relative;
+    background-color: #FE5000;
+    color: whitesmoke;
+    width: 90px;
+    height: 25px;
+    margin: 3px;
 
+}
+
+.demo-button {
+    border: 0.5px black solid;
+    position: relative;
+    background-color: #FE5000;
+    color: whitesmoke;
+    width: 90px;
+    height: 25px;
+    margin: 3px;
+
+}
+
+.form-button:hover {
+    border: white solid 0.5px;
+}
+.demo-button:hover {
+    border: white solid 0.5px;
 }
 
 input {
     border: 0.5px black solid;
-    border-radius: 25px;
+    width: fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 3px;
+
+}
+
+input:hover {
+    border: 1px #FE5000 solid;
 }

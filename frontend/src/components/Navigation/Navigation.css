@@ -1,11 +1,29 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#navbar {
+    align-items: flex-start;
+    background-color: transparent;
+    flex-wrap: wrap;
+    margin: 0;
+    position: absolute;
+    top: 0;
 }
 
 .navbar-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navbar-button {
+
+    border: 0.5px black solid;
+    position: relative;
+    background-color: #FE5000;
+    color: whitesmoke;
+    width: 90px;
+    height: 25px;
+    margin: 3px;
+}
+
+.navbar-button:hover {
+    border: white solid 0.5px;
 }
