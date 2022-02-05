@@ -1,0 +1,12 @@
+
+.form-button {
+    border: 0.5px black solid;
+    border-radius: 10% / 50%;
+    position: relative;
+
+}
+
+input {
+    border: 0.5px black solid;
+    border-radius: 25px;
+}
