@@ -1,5 +1,6 @@
 # LoudCloud
 ## Live Site
+https://loudcloud-app.herokuapp.com/
 LoudCloud was inspired from popular music streaming platform SoundCloud.
 
 ## Features
