@@ -19,7 +19,7 @@ LoudCloud was inspired from popular music streaming platform SoundCloud.
 
 
 ## Get started
-1. Clone this repo `git clone git@github.com:Breadsandwich/loudcloud.git'
+1. Clone this repo `git clone git@github.com:Breadsandwich/loudcloud.git`
 
 2. Install dependencies from the frontend and backend
 * cd /backend `npm install`
