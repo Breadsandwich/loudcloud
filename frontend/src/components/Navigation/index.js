@@ -24,12 +24,20 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul id='navbar'>
-      <li className='navbar-box'>
-        <NavLink exact to="/">Home</NavLink>
+    <div id='navbar'>
+      <NavLink exact to='/' id='nav-logo'>LoudCloud</NavLink>
+    <ul id='nav-left'>
+      <li>
+        <NavLink exact to="/" className='nav-labels'>Home</NavLink>
+      </li>
+    </ul>
+    <ul id='nav-right'>
+      <li>
         {isLoaded && sessionLinks}
       </li>
     </ul>
+
+    </div>
   );
 }
 
