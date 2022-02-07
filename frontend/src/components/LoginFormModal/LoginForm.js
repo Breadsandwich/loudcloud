@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
+import { login } from '../../store/session'
 import { useDispatch } from "react-redux";
 import './LoginForm.css'
 
@@ -19,6 +20,11 @@ function LoginForm() {
       }
     );
   };
+
+  const demoLogin = e => {
+    e.preventDefault();
+    return dispatch(login({ credential: 'Demo-lition', password:'password' }))
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -47,7 +53,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit" className="form-button">Log In</button>
-      <button type="submit" className="demo-button">Demo</button>
+      <button type="submit" className="demo-button" onClick={demoLogin}>Demo</button>
     </form>
   );
 }
