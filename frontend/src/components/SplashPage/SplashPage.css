@@ -33,6 +33,10 @@
 
 }
 
+.demo-btn:hover {
+    border: whitesmoke solid 0.5px;
+}
+
 .splash-btn:hover {
     border: white solid 1px;
 }
