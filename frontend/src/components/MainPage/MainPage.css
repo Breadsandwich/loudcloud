@@ -12,3 +12,13 @@
     align-items: center;
     z-index: 0;
 }
+
+
+.songList_item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: aqua;
+    width: 100%;
+
+}
