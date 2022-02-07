@@ -23,7 +23,7 @@ function LoginForm() {
 
   const demoLogin = e => {
     e.preventDefault();
-    return dispatch(login({ credential: 'Demo-lition', password:'password' }))
+    return dispatch(login({ credential: 'Demo-Disco-User', password:'password' }))
   }
 
   return (
