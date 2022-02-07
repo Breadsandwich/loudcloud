@@ -1,16 +1,28 @@
-#navbar {
-    align-items: flex-start;
-    background-color: transparent;
-    flex-wrap: wrap;
-    margin: 0;
-    position: absolute;
-    top: 0;
+#nav-logo {
+    display: flex;
+    color: whitesmoke;
+    position: relative;
+
 }
 
-.navbar-box {
+#navbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 45px;
+}
+
+.nav-labels {
+    color: whitesmoke;
+}
+
+
+#nav-right {
+    right: 100px;
 }
 
 .navbar-button {
