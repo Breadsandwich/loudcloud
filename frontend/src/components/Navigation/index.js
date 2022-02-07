@@ -25,12 +25,13 @@ function Navigation({ isLoaded }){
 
   return (
     <div id='navbar'>
-      <NavLink exact to='/' id='nav-logo'>LoudCloud</NavLink>
-    <ul id='nav-left'>
-      <li>
-        <NavLink exact to="/" className='nav-labels'>Home</NavLink>
-      </li>
-    </ul>
+      <button className='logo_btn'>
+        <NavLink exact to={'/'}></NavLink>
+      <i className="fab fa-soundcloud"></i>
+      </button>
+    <div id='nav-center'>
+    <NavLink exact to="/" className='nav-labels'>LoudCloud</NavLink>
+    </div>
     <ul id='nav-right'>
       <li>
         {isLoaded && sessionLinks}
