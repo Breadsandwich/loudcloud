@@ -1,0 +1,14 @@
+.main_content_container {
+    display: flex;
+    position: fixed;
+    z-index: 0;
+    flex-direction: column;
+    top: 5%;
+    height: 99%;
+    width: 70%;
+    background-color: white;
+    background-position: bottom;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
