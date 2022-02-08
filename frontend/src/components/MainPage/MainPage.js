@@ -10,7 +10,6 @@ const MainPage = () => {
     const songs = useSelector((state) => Object.values(state.songs))
 
 
-    console.log('@@@@@',songs)
 
     useEffect(() => {
         dispatch(getAllSongs())
