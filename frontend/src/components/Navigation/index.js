@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import UploadFormModal from '../UploadFormModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -12,7 +13,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <UploadFormModal user={sessionUser} />
+        <ProfileButton user={sessionUser} />
+      </>
     );
   } else {
     sessionLinks = (

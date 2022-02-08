@@ -2,7 +2,7 @@ import { csrfFetch } from './csrf';
 
 
 const LOAD_SONGS = 'songs/loadSongs'
-// const ADD_SONG = 'songs/addSong'
+const ADD_SONG = 'songs/addSong'
 // const EDIT_SONG = 'songs/editSong'
 // const DELETE_SONG = 'songs/delete_song'
 
@@ -12,6 +12,13 @@ const loadSongs = songs => {
     return {
         type: LOAD_SONGS,
         songs
+    }
+}
+
+const addSong = newSong => {
+    return {
+        type: ADD_SONG,
+        newSong
     }
 }
 
@@ -29,6 +36,23 @@ export const getAllSongs = () => async (dispatch) => {
     }
 
 };
+
+// new song thunk
+// export const getAllSongs = (newSong) => async (dispatch) => {
+//     const response = await csrfFetch('/api/songs', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(newSong)
+//     })
+
+//     const data = await response.json()
+//     if (response.ok) {
+//         dispatch(addSong(data))
+//         return data
+//     }
+
+
+// }
 
 // songs reducer
 
