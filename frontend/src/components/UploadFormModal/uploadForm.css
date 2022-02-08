@@ -26,3 +26,14 @@
     color: black;
     font-size: small;
 }
+
+.upload_button{
+    background: transparent;
+    color: whitesmoke;
+    border: 0;
+    font-size: 25px;
+}
+
+.upload_button:hover {
+    color: #FE5000;
+}

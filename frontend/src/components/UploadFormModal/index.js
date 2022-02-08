@@ -7,7 +7,9 @@ function UploadFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)} className='upload-button'>Upload</button>
+      <button onClick={() => setShowModal(true)} className='upload_button'>
+      <i className="fas fa-cloud-upload-alt" />
+      </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <UploadForm />
