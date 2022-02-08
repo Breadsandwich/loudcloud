@@ -6,11 +6,17 @@ import './MainPage.css'
 
 
 const MainPage = () => {
+    const dispatch = useDispatch();
+    const songs = useSelector(state => state.songs)
+    console.log('@@@@', songs)
+
+    useEffect(() => {
+        dispatch(getAllSongs())
+    }, [dispatch])
+
     return (
         <div className="main_content_container">
-            <ul className='songList_item'>
 
-            </ul>
         </div>
     )
 }
