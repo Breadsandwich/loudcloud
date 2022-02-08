@@ -1,9 +1,9 @@
 .main_content_container {
     display: flex;
-    position: fixed;
+    position: relative;
     z-index: 0;
     flex-direction: column;
-    top: 5%;
+    top: 10%;
     height: 99%;
     width: 70%;
     background-color: white;
@@ -14,11 +14,19 @@
 }
 
 
-.songList_item {
+.songlist_item {
     display: flex;
+    border-top: #333 solid 1px;
+    border-bottom: #333 solid 1px;
     position: relative;
     flex-direction: column;
-    background-color: aqua;
+    background-color:#c0c0c0;
     width: 100%;
+    height: 300px;
 
+}
+
+.song_img{
+    max-width: 100px;
+    max-height: 100px;
 }
