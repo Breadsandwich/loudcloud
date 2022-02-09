@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const loggedIn = useSelector((state) => state.session.user);
-  const songs = useSelector(state => state.songs.list)
+  
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));

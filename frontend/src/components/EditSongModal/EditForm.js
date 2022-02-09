@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux"
 import { editSong } from "../../store/songs";
 import { useHistory } from "react-router-dom";
 
-function EditForm({ song }) {
+function EditForm({song}) {
   const userId = useSelector(state => state.session.user.id)
-  console.log('current userId@@@@@@@:', userId)
-  console.log('song thing@@@@@@', song)
+  // const songs = useSelector((state) => Object.values(state.songs))
+  // console.log('current userId@@@@@@@:', userId)
+  // console.log('song thing@@@@@@', songs[1].title)
+
 
   const [title, setTitle] = useState(song.title)
-  const [imageUrl, setImageUrl] = useState(song.imageUrl)
+  const [imageUrl, setImageUrl] = useState('')
   const [validationErrors, setValidationErrors] = useState([])
 
 

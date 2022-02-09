@@ -28,12 +28,17 @@ router.post('/', asyncHandler(async function(req, res){
 
 }))
 
-router.put('/:id(\\d+)', asyncHandler(async function(req, res) {
-  const songId = req.params.id;
-  const song = await Song.findByPk(songId, {include: User });
-  const editSong = await song.update(req.body)
+router.put('/:id', asyncHandler(async function(req, res) {
+  const { userId, title, imageUrl } = req.body
+  let user  = parseInt(userId, 10)
 
-  res.json(editSong)
+  const editSong = await Song.update({
+    userId: user,
+    imageUrl,
+    title
+  });
+
+  return res.json(editSong)
 }));
 
 
