@@ -97,7 +97,7 @@ const songReducer = (state = initalState , action) => {
             newState.song = {...newState.songs, [action.song.id]: action.song }
             return newState
         case UPDATE_SONG:
-            return { ...state, [action.song]: action.song}
+            return { ...state, [action.song.id]: action.song}
     default:
         return state;
     }
