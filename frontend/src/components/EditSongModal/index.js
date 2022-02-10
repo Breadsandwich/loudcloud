@@ -6,7 +6,7 @@ import EditForm from './EditForm';
 function EditFormModal(props) {
   const [showModal, setShowModal] = useState(false);
 
-  console.log('from EditSongModal/index', props.song)
+  // console.log('from EditSongModal/index', props.song)
 
 
   return (

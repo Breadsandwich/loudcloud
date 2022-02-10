@@ -24,13 +24,12 @@ const MainPage = () => {
 
 
     // console.log('from main page', songsObj)
-    // console.log('from main page2', songs)
-
+    // console.log('from main page2', sessionUser.id)
+    // console.log('this is id', id)
 
     let sessionButtons;
     if (sessionUser) {
         sessionButtons = song => {
-            console.log('what is song', song)
            return (
             <>
                 <EditSongModal user={sessionUser} song={song} />
