@@ -3,21 +3,21 @@ import { useDispatch, useSelector } from "react-redux"
 import { editSong } from "../../store/songs";
 import { useHistory } from "react-router-dom";
 
-function EditForm({songObj}) {
+function EditForm({song}) {
 
-
-  console.log('from edit form - #########', songObj)
-
+  // console.log('from EditForm.js%%%%%',song.title )
 
 
   const userId = useSelector(state => state.session.user.id)
-  const [title, setTitle] = useState('')
-  const [imageUrl, setImageUrl] = useState('')
+  const [title, setTitle] = useState(song.title)
+  const [imageUrl, setImageUrl] = useState(song.imageUrl)
   const [validationErrors, setValidationErrors] = useState([])
 
 
   const dispatch = useDispatch();
   const history = useHistory();
+
+
 
   const validateEdit = () => {
     const validationErrors = [];

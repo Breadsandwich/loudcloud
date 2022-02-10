@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllSongs } from '../../store/songs';
+import { useParams } from 'react-router-dom';
 import EditSongModal from '../EditSongModal'
 import EditFormModal from '../EditSongModal';
 import DeleteModal from '../DeleteModal';
@@ -16,20 +17,26 @@ const MainPage = () => {
 
     const songs = Object.values(songsObj)
 
+    // const obj = songs.reduce(
+    //     (songObj, song) => Object.assign(songObj, {[song.key]: song.value}), {})
+
+    // console.log('from mainPage - #########', obj)
 
 
-    console.log('from main page', songsObj)
+    // console.log('from main page', songsObj)
     // console.log('from main page2', songs)
 
 
     let sessionButtons;
     if (sessionUser) {
-        sessionButtons = (
+        sessionButtons = song => {
+            console.log('what is song', song)
+           return (
             <>
-                <EditSongModal user={sessionUser} songObj={songsObj}/>
+                <EditSongModal user={sessionUser} song={song} />
                 <DeleteModal />
             </>
-        );
+        )};
     }
 
 
@@ -47,7 +54,7 @@ const MainPage = () => {
                         <h2>{song.title}</h2>
                         <div className={'image_container'}>
                             <img src={`${song.imageUrl}`} alt={`${song.title}-image`} className='song_img' />
-                            {sessionButtons}
+                            {sessionUser && sessionButtons(song)}
                         </div>
                     </div>
                     <div className='audio_div'>
