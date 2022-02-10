@@ -70,7 +70,6 @@ function EditForm({song}) {
       <button type="submit">Submit Edit</button>
 
       <div className="support_label">
-        <p>Song Url only supports .mp3* </p>
         <p>Image Url only supports .jpg*</p>
       </div>
    </form>
