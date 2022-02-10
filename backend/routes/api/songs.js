@@ -7,7 +7,9 @@ const router = express.Router();
 
 
 router.get('/', asyncHandler(async function(req, res) {
-    const songs = await Song.findAll();
+    const songs = await Song.findAll({
+      include: User
+    });
 
     return res.json(songs);
   }));
@@ -31,12 +33,11 @@ router.post('/', asyncHandler(async function(req, res){
 
 router.put('/:id', asyncHandler(async function(req, res){
   const id = req.params.id;
-  const { title, imageUrl, songUrl } = req.body;
+  const { title, imageUrl } = req.body;
   const song = await Song.findByPk(id, { include: User });
   const updatedSong = await song.update({
     title,
-    imageUrl,
-    songUrl
+    imageUrl
   });
   res.json(updatedSong);
 }))

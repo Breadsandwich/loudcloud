@@ -1,27 +1,42 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllSongs, editSong, deleteSong, uploadNewSong } from '../../store/songs';
+import { getAllSongs } from '../../store/songs';
+import { useParams } from 'react-router-dom';
 import EditSongModal from '../EditSongModal'
+import EditFormModal from '../EditSongModal';
+import DeleteModal from '../DeleteModal';
 import './MainPage.css'
 
 
 
-const MainPage = ({song, id}) => {
+const MainPage = () => {
     const dispatch = useDispatch();
-    const songs = useSelector((state) => Object.values(state.songs))
-
-
-
     const sessionUser = useSelector(state => state.session.user);
+
+    const songsObj = useSelector((state) => state.songs)
+
+    const songs = Object.values(songsObj)
+
+    // const obj = songs.reduce(
+    //     (songObj, song) => Object.assign(songObj, {[song.key]: song.value}), {})
+
+    // console.log('from mainPage - #########', obj)
+
+
+    // console.log('from main page', songsObj)
+    // console.log('from main page2', songs)
+
 
     let sessionButtons;
     if (sessionUser) {
-        sessionButtons = (
+        sessionButtons = song => {
+            console.log('what is song', song)
+           return (
             <>
-                <EditSongModal user={sessionUser} song={song}/>
-                <button>Delete</button>
+                <EditSongModal user={sessionUser} song={song} />
+                <DeleteModal />
             </>
-        );
+        )};
     }
 
 
@@ -35,12 +50,16 @@ const MainPage = ({song, id}) => {
         <div className="main_content_container">
             {songs.map(song => (
                 <div key={`song-${song.id}`} className='songlist_item'>
-                    <h2>{song.title}</h2>
-                    <div className={'image_container'}>
-                        <img src={`${song.imageUrl}`} alt={`${song.title}-image`} className='song_img' />
-                        {sessionButtons}
+                    <div className='song_detail_box'>
+                        <h2>{song.title}</h2>
+                        <div className={'image_container'}>
+                            <img src={`${song.imageUrl}`} alt={`${song.title}-image`} className='song_img' />
+                            {sessionUser && sessionButtons(song)}
+                        </div>
                     </div>
-                    <audio controls src={`${song.songUrl}`}></audio>
+                    <div className='audio_div'>
+                        <audio className='audio_player' controls src={`${song.songUrl}`}></audio>
+                    </div>
                 </div>
             ))}
         </div>

@@ -4,20 +4,20 @@ import { editSong } from "../../store/songs";
 import { useHistory } from "react-router-dom";
 
 function EditForm({song}) {
-  const userId = useSelector(state => state.session.user.id)
-  // const songs = useSelector((state) => Object.values(state.songs))
-  // console.log('current userId@@@@@@@:', userId)
-  // console.log('song thing@@@@@@', songs[1].title)
-  const songObj = useSelector(state => state.songs.list);
-  // console.log('---->:', song)
 
-  const [title, setTitle] = useState('')
-  const [imageUrl, setImageUrl] = useState('')
+  // console.log('from EditForm.js%%%%%',song.title )
+
+
+  const userId = useSelector(state => state.session.user.id)
+  const [title, setTitle] = useState(song.title)
+  const [imageUrl, setImageUrl] = useState(song.imageUrl)
   const [validationErrors, setValidationErrors] = useState([])
 
 
   const dispatch = useDispatch();
   const history = useHistory();
+
+
 
   const validateEdit = () => {
     const validationErrors = [];

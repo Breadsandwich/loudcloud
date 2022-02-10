@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import EditForm from './EditForm';
 
-function EditFormModal({ song }) {
+function EditFormModal(props) {
   const [showModal, setShowModal] = useState(false);
-  console.log('#########', song)
+
+  console.log('from EditSongModal/index', props.song)
 
 
   return (
@@ -14,7 +16,7 @@ function EditFormModal({ song }) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditForm />
+          <EditForm song={props.song}/>
         </Modal>
       )}
     </>
