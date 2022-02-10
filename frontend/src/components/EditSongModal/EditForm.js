@@ -8,9 +8,10 @@ function EditForm({song}) {
   // const songs = useSelector((state) => Object.values(state.songs))
   // console.log('current userId@@@@@@@:', userId)
   // console.log('song thing@@@@@@', songs[1].title)
+  const songObj = useSelector(state => state.songs.list);
+  // console.log('---->:', song)
 
-
-  const [title, setTitle] = useState(song.title)
+  const [title, setTitle] = useState('')
   const [imageUrl, setImageUrl] = useState('')
   const [validationErrors, setValidationErrors] = useState([])
 

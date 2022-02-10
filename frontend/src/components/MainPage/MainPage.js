@@ -6,9 +6,13 @@ import './MainPage.css'
 
 
 
-const MainPage = () => {
+const MainPage = ({song}) => {
     const dispatch = useDispatch();
     const songs = useSelector((state) => Object.values(state.songs))
+
+
+    const songsObj = useSelector(state => state.songs);
+    // console.log('&&&&&&&&&&&&&&&&&&&',songsObj)
 
     const sessionUser = useSelector(state => state.session.user);
 
@@ -16,7 +20,7 @@ const MainPage = () => {
     if (sessionUser) {
         sessionButtons = (
             <>
-                <EditSongModal user={sessionUser} />
+                <EditSongModal user={sessionUser} song={song}/>
             </>
         );
     } else {

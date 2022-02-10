@@ -62,8 +62,8 @@ export const uploadNewSong = (newSong) => async (dispatch) => {
 }
 
 // edit song thunk [update]
-export const editSong = (song, songId) => async (dispatch) =>  {
-    const response = await csrfFetch(`/api/songs/${songId}`, {
+export const editSong = (song, id) => async (dispatch) =>  {
+    const response = await csrfFetch(`/api/songs/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(song)

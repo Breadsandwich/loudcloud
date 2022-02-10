@@ -12,10 +12,9 @@ router.get('/', asyncHandler(async function(req, res) {
     return res.json(songs);
   }));
 
-router.post('/', asyncHandler(async function(req, res){
+  router.post('/', asyncHandler(async function(req, res){
     const {  userId, title, songUrl, imageUrl } = req.body
     let user = parseInt(userId, 10)
-    console.log(user)
 
     const newSong = await Song.create({
       userId: user,
@@ -28,17 +27,30 @@ router.post('/', asyncHandler(async function(req, res){
 
 }))
 
-router.put('/:id', asyncHandler(async function(req, res) {
-  const { userId, title, imageUrl } = req.body
-  let user  = parseInt(userId, 10)
 
-  const editSong = await Song.update({
-    userId: user,
-    imageUrl,
-    title
+
+router.put('/:id', asyncHandler(async function(req, res){
+  const id = req.params.id;
+  const { title, imageUrl } = req.body;
+  const song = await Song.findByPk(id, { include: User });
+  const updatedSong = await song.update({
+    title,
+    imageUrl
   });
+  res.json(updatedSong);
+}))
 
-  return res.json(editSong)
+
+
+router.delete('/:id', asyncHandler(async function(req, res) {
+
+  const deleteSong = await Song.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+
+  return res.json(deleteSong);
 }));
 
 
