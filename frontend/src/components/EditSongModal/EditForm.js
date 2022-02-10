@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function EditForm({song}) {
 
-  // console.log('from EditForm.js%%%%%',song.title )
+  // console.log('from EditForm.js%%%%%',song.title)
 
 
   const userId = useSelector(state => state.session.user.id)
@@ -33,7 +33,7 @@ function EditForm({song}) {
     e.preventDefault();
 
 
-    const payload = {
+    let payload = {
         userId,
         title,
         imageUrl
@@ -44,7 +44,7 @@ function EditForm({song}) {
         return setValidationErrors(errors);
     }
 
-    const updatedSong = await dispatch(editSong(payload))
+    let updatedSong = await dispatch(editSong(payload, song.id))
     if (updatedSong) {
         history.push('/')
     }

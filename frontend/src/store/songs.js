@@ -68,8 +68,8 @@ export const uploadNewSong = (newSong) => async (dispatch) => {
 
 
 // edit song thunk [update]
-export const editSong = (song) => async (dispatch) =>  {
-    const response = await csrfFetch(`/api/songs/${song.id}`, {
+export const editSong = (song, songId) => async (dispatch) =>  {
+    const response = await csrfFetch(`/api/songs/${songId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(song)
@@ -77,7 +77,7 @@ export const editSong = (song) => async (dispatch) =>  {
 
     if (response.ok) {
         const data = await response.json()
-        dispatch(updateSong(data))
+        await dispatch(updateSong(data))
         return data
     }
 }
