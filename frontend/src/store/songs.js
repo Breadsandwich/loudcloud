@@ -97,7 +97,7 @@ export const deleteSong = (id) => async (dispatch) => {
 // songs reducer
 
 
-const initialState = {}
+const initialState = { entries: {}, userUploads: {}}
 
 const songReducer = (state = initialState , action) => {
     let newState;
@@ -106,6 +106,7 @@ const songReducer = (state = initialState , action) => {
             const allSongs = {};
             action.songs.forEach(song => (allSongs[song.id] = song))
             return allSongs
+
         case ADD_SONG:
             newState = {...state}
             newState.song = {...newState.songs, [action.song.id]: action.song }
@@ -115,7 +116,7 @@ const songReducer = (state = initialState , action) => {
             return { ...state, [action.song.id]: action.song}
         case DELETE_SONG:
             newState = {...state};
-            delete newState[action.song]
+            delete newState[action.id]
             return newState
     default:
         return state;

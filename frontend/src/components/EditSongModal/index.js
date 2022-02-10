@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import EditForm from './EditForm';
 
-function EditFormModal({ song }) {
+function EditFormModal( {song} ) {
   const [showModal, setShowModal] = useState(false);
-  const songvalue = Object.values(song)
 
-  // console.log('from edit modal  - #########', song)
-  console.log('from edit modal  - #########', songvalue)
+  console.log('from EditSongModal/index', song)
+
 
   return (
     <>

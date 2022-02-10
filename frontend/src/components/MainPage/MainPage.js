@@ -9,17 +9,22 @@ import './MainPage.css'
 
 const MainPage = () => {
     const dispatch = useDispatch();
-    const songs = useSelector((state) => Object.values(state.songs))
-    // console.log('from main page', id)
-
-
     const sessionUser = useSelector(state => state.session.user);
+
+    const songsObj = useSelector((state) => state.songs)
+    const songs = Object.values(songsObj)
+
+
+
+    // console.log('from main page', songsObj)
+    // console.log('from main page2', songs)
+   
 
     let sessionButtons;
     if (sessionUser) {
         sessionButtons = (
             <>
-                <EditSongModal user={sessionUser} song={songs}/>
+                <EditSongModal user={sessionUser} song={songsObj}/>
                 <DeleteModal />
             </>
         );

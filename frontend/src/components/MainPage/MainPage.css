@@ -1,9 +1,9 @@
 .main_content_container {
     display: flex;
-    position: relative;
+    position: absolute;
     z-index: 0;
     flex-direction: column;
-    top: 4%;
+    top: 7%;
     height: 99%;
     width: 70%;
     background-color: white;
