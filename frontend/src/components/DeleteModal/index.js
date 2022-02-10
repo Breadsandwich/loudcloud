@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import DeleteForm from './DeleteForm';
 
-function DeleteModal() {
+function DeleteModal(props) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ function DeleteModal() {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <DeleteForm />
+          <DeleteForm song={props.song}/>
         </Modal>
       )}
     </>

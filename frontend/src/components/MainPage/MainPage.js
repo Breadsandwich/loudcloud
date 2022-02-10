@@ -34,7 +34,7 @@ const MainPage = () => {
            return (
             <>
                 <EditSongModal user={sessionUser} song={song} />
-                <DeleteModal />
+                <DeleteModal song={song} />
             </>
         )};
     }
