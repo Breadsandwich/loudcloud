@@ -4,12 +4,12 @@ import { deleteSong } from "../../store/songs";
 import { useHistory } from 'react-router-dom';
 import './deleteForm.css'
 
-function DeleteForm({id, hideform}) {
+function DeleteForm({song, hideform}) {
     const dispatch = useDispatch();
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(deleteSong(id));
+        dispatch(deleteSong(song.id));
         hideform();
     }
 
