@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllSongs } from '../../store/songs';
 import EditSongModal from '../EditSongModal'
+import EditFormModal from '../EditSongModal';
 import DeleteModal from '../DeleteModal';
 import './MainPage.css'
 
@@ -12,19 +13,20 @@ const MainPage = () => {
     const sessionUser = useSelector(state => state.session.user);
 
     const songsObj = useSelector((state) => state.songs)
+
     const songs = Object.values(songsObj)
 
 
 
-    // console.log('from main page', songsObj)
+    console.log('from main page', songsObj)
     // console.log('from main page2', songs)
-   
+
 
     let sessionButtons;
     if (sessionUser) {
         sessionButtons = (
             <>
-                <EditSongModal user={sessionUser} song={songsObj}/>
+                <EditSongModal user={sessionUser} songObj={songsObj}/>
                 <DeleteModal />
             </>
         );

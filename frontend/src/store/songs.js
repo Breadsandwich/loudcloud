@@ -97,9 +97,9 @@ export const deleteSong = (id) => async (dispatch) => {
 // songs reducer
 
 
-const initialState = { entries: {}, userUploads: {}}
+// const initialState = { entries: {} }
 
-const songReducer = (state = initialState , action) => {
+const songReducer = (state = {} , action) => {
     let newState;
     switch (action.type) {
         case LOAD_SONGS:
