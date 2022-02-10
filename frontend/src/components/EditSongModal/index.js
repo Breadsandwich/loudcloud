@@ -4,8 +4,10 @@ import EditForm from './EditForm';
 
 function EditFormModal({ song }) {
   const [showModal, setShowModal] = useState(false);
-  console.log('from edit modal  - #########', song)
+  const songvalue = Object.values(song)
 
+  // console.log('from edit modal  - #########', song)
+  console.log('from edit modal  - #########', songvalue)
 
   return (
     <>

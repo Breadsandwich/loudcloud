@@ -4,14 +4,27 @@ import { deleteSong } from "../../store/songs";
 import { useHistory } from 'react-router-dom';
 import './deleteForm.css'
 
-function DeleteForm() {
+function DeleteForm({id, hideform}) {
+    const dispatch = useDispatch();
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        dispatch(deleteSong(id));
+        hideform();
+    }
+
+    const handleCancel = e => {
+        e.preventDefault();
+        hideform();
+    }
+
     return (
         <form className="delete_form">
             <h3>Are you sure?</h3>
 
             <div>
-                <button>yes</button>
-                <button>cancel</button>
+                <button className="delete_yes_btn" onClick={handleSubmit}>yes</button>
+                <button className="delete_cancel_btn" onClick={handleCancel}>cancel</button>
             </div>
         </form>
     )
