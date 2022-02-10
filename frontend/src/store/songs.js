@@ -4,7 +4,7 @@ import { csrfFetch } from './csrf';
 const LOAD_SONGS = 'songs/loadSongs'
 const ADD_SONG = 'songs/addSong'
 const UPDATE_SONG = 'songs/editSong'
-// const DELETE_SONG = 'songs/delete_song'
+const DELETE_SONG = 'songs/delete_song'
 
 
 //action creator
@@ -29,6 +29,12 @@ const updateSong = song => {
     }
 }
 
+const removeSong = id => {
+    return {
+        type: DELETE_SONG,
+        id
+    }
+}
 
 // thunks
 
@@ -57,13 +63,13 @@ export const uploadNewSong = (newSong) => async (dispatch) => {
         dispatch(addSong(data))
         return data
     }
-
-
 }
 
+
+
 // edit song thunk [update]
-export const editSong = (song, id) => async (dispatch) =>  {
-    const response = await csrfFetch(`/api/songs/${id}`, {
+export const editSong = (song) => async (dispatch) =>  {
+    const response = await csrfFetch(`/api/songs/${song.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(song)
@@ -74,7 +80,18 @@ export const editSong = (song, id) => async (dispatch) =>  {
         dispatch(updateSong(data))
         return data
     }
+}
 
+// delete song thunk
+export const deleteSong = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/songs/${id}`, {
+        method: 'DELETE'
+    })
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(removeSong(id))
+        return data;
+    }
 }
 
 // songs reducer
