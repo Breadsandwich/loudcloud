@@ -12,6 +12,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const loggedIn = useSelector((state) => state.session.user);
 
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);

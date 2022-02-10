@@ -3,7 +3,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_SONGS = 'songs/loadSongs'
 const ADD_SONG = 'songs/addSong'
-// const EDIT_SONG = 'songs/editSong'
+const UPDATE_SONG = 'songs/editSong'
 // const DELETE_SONG = 'songs/delete_song'
 
 
@@ -18,6 +18,13 @@ const loadSongs = songs => {
 const addSong = song => {
     return {
         type: ADD_SONG,
+        song
+    }
+}
+
+const updateSong = song => {
+    return {
+        type: UPDATE_SONG,
         song
     }
 }
@@ -48,10 +55,25 @@ export const uploadNewSong = (newSong) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json()
         dispatch(addSong(data))
-        console.log(data)
         return data
     }
 
+
+}
+
+// edit song thunk [update]
+export const editSong = (song, id) => async (dispatch) =>  {
+    const response = await csrfFetch(`/api/songs/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(song)
+    })
+
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(updateSong(data))
+        return data
+    }
 
 }
 
@@ -74,6 +96,8 @@ const songReducer = (state = initalState , action) => {
             newState = {...state}
             newState.song = {...newState.songs, [action.song.id]: action.song }
             return newState
+        case UPDATE_SONG:
+            return { ...state, [action.song.id]: action.song}
     default:
         return state;
     }
