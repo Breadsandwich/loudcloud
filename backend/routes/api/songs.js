@@ -7,7 +7,9 @@ const router = express.Router();
 
 
 router.get('/', asyncHandler(async function(req, res) {
-    const songs = await Song.findAll();
+    const songs = await Song.findAll({
+      include: User
+    });
 
     return res.json(songs);
   }));

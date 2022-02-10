@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import EditForm from './EditForm';
+import DeleteForm from './DeleteForm';
 
-function EditFormModal({ song }) {
+function DeleteModal() {
   const [showModal, setShowModal] = useState(false);
-  console.log('from edit modal  - #########', song)
-
 
   return (
     <>
-      <button onClick={() => setShowModal(true)} className='edit_button'>
-        edit
+      <button onClick={() => setShowModal(true)} className='delete_button'>
+        Delete
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditForm />
+          <DeleteForm />
         </Modal>
       )}
     </>
   );
 }
 
-export default EditFormModal;
+export default DeleteModal;

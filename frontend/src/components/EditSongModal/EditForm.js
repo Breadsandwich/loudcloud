@@ -5,11 +5,9 @@ import { useHistory } from "react-router-dom";
 
 function EditForm({song}) {
   const userId = useSelector(state => state.session.user.id)
-  // const songs = useSelector((state) => Object.values(state.songs))
-  // console.log('current userId@@@@@@@:', userId)
-  // console.log('song thing@@@@@@', songs[1].title)
+
   const songObj = useSelector(state => state.songs.list);
-  // console.log('---->:', song)
+  console.log('from edit form - #########', song)
 
   const [title, setTitle] = useState('')
   const [imageUrl, setImageUrl] = useState('')
