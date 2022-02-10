@@ -1,18 +1,16 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllSongs } from '../../store/songs';
+import { getAllSongs, editSong, deleteSong, uploadNewSong } from '../../store/songs';
 import EditSongModal from '../EditSongModal'
 import './MainPage.css'
 
 
 
-const MainPage = ({song}) => {
+const MainPage = ({song, id}) => {
     const dispatch = useDispatch();
     const songs = useSelector((state) => Object.values(state.songs))
 
 
-    const songsObj = useSelector(state => state.songs);
-    // console.log('&&&&&&&&&&&&&&&&&&&',songsObj)
 
     const sessionUser = useSelector(state => state.session.user);
 
@@ -21,15 +19,10 @@ const MainPage = ({song}) => {
         sessionButtons = (
             <>
                 <EditSongModal user={sessionUser} song={song}/>
+                <button>Delete</button>
             </>
         );
-    } else {
-        sessionButtons = (
-            <>
-            </>
-        )
     }
-
 
 
     useEffect(() => {
