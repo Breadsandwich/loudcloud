@@ -97,12 +97,9 @@ export const deleteSong = (id) => async (dispatch) => {
 // songs reducer
 
 
-const initalState = {
-    list: [],
+const initialState = {}
 
-}
-
-const songReducer = (state = initalState , action) => {
+const songReducer = (state = initialState , action) => {
     let newState;
     switch (action.type) {
         case LOAD_SONGS:
@@ -114,7 +111,12 @@ const songReducer = (state = initalState , action) => {
             newState.song = {...newState.songs, [action.song.id]: action.song }
             return newState
         case UPDATE_SONG:
+            newState = {...state}
             return { ...state, [action.song.id]: action.song}
+        case DELETE_SONG:
+            newState = {...state};
+            delete newState[action.song]
+            return newState
     default:
         return state;
     }
