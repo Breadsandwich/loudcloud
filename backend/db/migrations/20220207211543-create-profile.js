@@ -15,7 +15,7 @@ module.exports = {
       },
       profilePicUrl: {
         type: Sequelize.STRING,
-        defaultValue: 'https://lh3.googleusercontent.com/8G2r77Vej8p3CglkaCFZCKIscdkLwy1l9lK1l-ThxgPEDp4dKvSfElgMxIAUNiM0-tlyxOjL4iTifX4JzbUeN2-X2zKAYWLC7i4AMw=w600'
+        defaultValue: 'https://www.robives.com/wp-content/uploads/2016/10/boombox-a600-600x600.jpg'
       },
       name: {
         type: Sequelize.STRING

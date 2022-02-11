@@ -24,7 +24,7 @@ function EditForm({song}) {
     if (title.length < 3) validationErrors.push('Song Title must be longer than 3 characters.')
     if (!title) validationErrors.push('Please provide a Song Title.')
     if (title.length > 255) validationErrors.push('Song Title cannot have more than 255 characters')
-    if (!imageUrl.endsWith('.jpg')) validationErrors.push('Image url must be valid .png, .jpg, or .jpeg link')
+    if (!imageUrl.endsWith('.jpg')) validationErrors.push('Image url must be valid .jpg link')
 
     return validationErrors;
   }

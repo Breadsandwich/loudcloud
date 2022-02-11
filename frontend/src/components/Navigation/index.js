@@ -9,12 +9,13 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-        <NavLink to={'profile'} id={'profile_link'}>Profile</NavLink>
+        <NavLink to={`/profile/${sessionUser.id}`} id={'profile_link'}>Profile</NavLink>
         <UploadFormModal user={sessionUser}/>
         <ProfileButton user={sessionUser} />
       </>

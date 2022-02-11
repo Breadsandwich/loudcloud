@@ -1,5 +1,5 @@
 #profile_container{
-    /* background-color: aqua; */
+    /* background-color:rgba(255, 255, 255, 0.904); */
     width: 70%;
     height: 90vh;
     display: grid;
@@ -11,7 +11,7 @@
 }
 
 #profile_container > #a {
-    background-color: yellow;
+    background-color:rgba(255, 255, 255, 0.904);
     grid-area: a;
     display: flex;
     flex-direction: column;
@@ -20,17 +20,18 @@
 }
 
 #profile_container > #b {
-    background-color: red;
+    background-color:rgba(255, 255, 255, 0.904);
     grid-area: b;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-left: #333 dashed 1px;
 }
 
 
 #a > .profile_image{
-    background-color: blue;
+    background-color:rgba(255, 255, 255, 0.904);
     display: block;
     position: absolute;
     top: 15%;
@@ -38,23 +39,41 @@
     width: 200px;
 }
 
+.profile_pic {
+    max-height: 100%;
+    max-width: 100%;
+}
+
 #a > .username {
-    background-color: aqua;
+    background-color:rgba(255, 255, 255, 0.904);
     position: absolute;
     top: 37%;
 }
 
 #b > .profile_label {
-    background-color: aqua;
+    background-color:rgba(255, 255, 255, 0.904);
     position: absolute;
     top: 5%;
+    left: 50%;
 
 }
 
 #b > .user_details_box {
-    background-color: lightgreen;
+    background-color:rgba(255, 255, 255, 0.904);
     position: absolute;
     top: 15%;
     height: 200px;
     width: 500px;
+}
+
+.bio_text {
+    position: relative;
+}
+
+#profile_actions {
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    top: 8%;
+    left: 58.5%;
 }

@@ -19,10 +19,10 @@ const MainPage = () => {
 
     const songs = Object.values(songsObj)
 
-    // console.log('from mainPage - #########', obj)
+    // console.log('from mainPage - #########', songs)
 
 
-   
+
     // console.log('from main page2', sessionUser.id)
 
 
