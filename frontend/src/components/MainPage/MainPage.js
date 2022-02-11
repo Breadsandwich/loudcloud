@@ -4,6 +4,7 @@ import { getAllSongs } from '../../store/songs';
 import { useParams } from 'react-router-dom';
 import EditSongModal from '../EditSongModal'
 import DeleteModal from '../DeleteModal';
+import match from '../../utils/match'
 import './MainPage.css'
 
 
@@ -18,13 +19,10 @@ const MainPage = () => {
 
     const songs = Object.values(songsObj)
 
-    // const obj = songs.reduce(
-    //     (songObj, song) => Object.assign(songObj, {[song.key]: song.value}), {})
-
     // console.log('from mainPage - #########', obj)
 
 
-    console.log('from main page', songsObj)
+   
     // console.log('from main page2', sessionUser.id)
 
 

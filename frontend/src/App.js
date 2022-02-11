@@ -14,6 +14,9 @@ function App() {
   const loggedIn = useSelector((state) => state.session.user);
 
 
+
+
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -28,7 +31,7 @@ function App() {
 
           </Route>
 
-          <Route path={`/profile`}>
+          <Route path={`/profile/:id`}>
             <ProfilePage />
           </Route>
 

@@ -1,7 +1,16 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { getProfile } from '../../store/profiles';
 import './ProfilePage.css'
 
-function profilePage() {
+const ProfilePage = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const sessionUser = useSelector(state => state.session.user);
+  // const currentUserProfile = useSelector(state => state.profile)
+  // console.log('from ProfilePage:', )
+
   return (
     <div id='profile_container'>
         <div id='a'>
@@ -30,4 +39,4 @@ function profilePage() {
   )
 }
 
-export default profilePage
+export default ProfilePage
