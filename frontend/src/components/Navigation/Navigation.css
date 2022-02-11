@@ -55,3 +55,11 @@
 .navbar-button:hover {
     border: white solid 0.5px;
 }
+
+
+#profile_link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+

@@ -14,6 +14,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
+        <NavLink to={'profile'} id={'profile_link'}>Profile</NavLink>
         <UploadFormModal user={sessionUser}/>
         <ProfileButton user={sessionUser} />
       </>

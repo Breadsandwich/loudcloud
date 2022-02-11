@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage/SplashPage";
 import MainPage from "./components/MainPage/MainPage";
 import { restoreUser } from "./store/session";
+import ProfilePage from './components/ProfilePage/ProfilePage'
 
 function App() {
   const dispatch = useDispatch();
@@ -27,8 +28,8 @@ function App() {
 
           </Route>
 
-          <Route>
-            {/**songs page */}
+          <Route path={`/profile`}>
+            <ProfilePage />
           </Route>
 
           <Route>
