@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     profilePicUrl: {
       type: DataTypes.STRING,
-      defaultValue: '/images/default.jpg'
+      defaultValue: 'https://www.robives.com/wp-content/uploads/2016/10/boombox-a600-600x600.jpg',
     },
     name: {
       type: DataTypes.STRING,

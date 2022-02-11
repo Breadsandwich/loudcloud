@@ -72,9 +72,7 @@ const EditProfileForm = ({profile, showModal}) => {
                 value={bio}
                 onChange={e => setBio(e.target.value)}
             />
-
-
-            <button>Submit Changes</button>
+            <button type="submit">Submit Changes</button>
 
         </form>
     )

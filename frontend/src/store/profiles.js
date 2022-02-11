@@ -30,11 +30,11 @@ export const getProfile = (id) => async (dispatch) => {
 }
 
 // edit profile thunk
-export const editProfile = (userData) => async (dispatch) => {
-    const response = await csrfFetch(`/api/profiles/${userData.id}`, {
+export const editProfile = (profile, profileId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/profiles/${profileId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(userData)
+        body: JSON.stringify(profile)
     })
 
     if (response.ok) {
