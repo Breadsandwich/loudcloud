@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function EditForm({song}) {
 
-  // console.log('from EditForm.js%%%%%',song.title)
+  console.log('from EditForm.js%%%%%', song.id)
 
 
   const userId = useSelector(state => state.session.user.id)
