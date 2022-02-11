@@ -7,7 +7,7 @@
     grid-template-areas:
                 "a b b"
                 "a b b"
-                "a b b";
+                "c c c";
 }
 
 #profile_container > #a {
