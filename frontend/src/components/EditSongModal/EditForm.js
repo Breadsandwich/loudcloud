@@ -7,12 +7,12 @@ function EditForm({song}) {
 
   console.log('from EditForm.js%%%%%', song.id)
 
-
   const userId = useSelector(state => state.session.user.id)
   const [title, setTitle] = useState(song.title)
   const [imageUrl, setImageUrl] = useState(song.imageUrl)
   const [validationErrors, setValidationErrors] = useState([])
 
+  // console.log('userId from EditForm.js%%%%%', userId)
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -47,6 +47,7 @@ function EditForm({song}) {
     let updatedSong = await dispatch(editSong(payload, song.id))
     if (updatedSong) {
         history.push('/')
+
     }
 }
 
