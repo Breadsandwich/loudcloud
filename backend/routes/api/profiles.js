@@ -8,9 +8,11 @@ const router = express.Router();
 
 router.get('/:id', asyncHandler(async function (req, res) {
     const id = req.params.id;
-    const profile = await Profile.findByPk(id)
+    const profile = await Profile.findOne({
+        where: { id }, include: [{ model: User }]
+    })
     return res.json(profile)
-}))
+}));
 
 
 router.put('/:id', asyncHandler(async function (req, res) {
@@ -24,8 +26,8 @@ router.put('/:id', asyncHandler(async function (req, res) {
         bio
     });
 
-     res.json(updatedProfile)
-}))
+      return res.json(updatedProfile)
+}));
 
 
 module.exports = router
