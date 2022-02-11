@@ -15,7 +15,7 @@ module.exports = {
       },
       profilePicUrl: {
         type: Sequelize.STRING,
-        defaultValue: 'https://lh3.googleusercontent.com/8G2r77Vej8p3CglkaCFZCKIscdkLwy1l9lK1l-ThxgPEDp4dKvSfElgMxIAUNiM0-tlyxOjL4iTifX4JzbUeN2-X2zKAYWLC7i4AMw=w600'
+        defaultValue: '/images/default.jpg'
       },
       name: {
         type: Sequelize.STRING

@@ -24,14 +24,16 @@ export const getProfile = (id) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         dispatch(loadProfile(data))
-        return data
     }
+    // console.log('load profile thunk', response)
+    return response
 }
 
 // edit profile thunk
 export const editProfile = (userData) => async (dispatch) => {
-    const response = await csrfFetch(`/api/songs/${userData.id}`, {
+    const response = await csrfFetch(`/api/profiles/${userData.id}`, {
         method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData)
     })
 
@@ -46,17 +48,20 @@ export const editProfile = (userData) => async (dispatch) => {
 
 //profile reducer
 
-const profileReducer = (state = {} , action) =>  {
+const initialState = {}
+
+const profileReducer = (state = initialState , action) =>  {
     let newState;
     switch (action.type) {
         case LOAD_PROFILE: {
-            const useProfile = [action.profile]
-            return useProfile;
-        }
-        case EDIT_PROFILE: {
-            newState = [action.profile]
+            newState = {...state, [action.profile.id]: action.profile}
             return newState
         }
+        case EDIT_PROFILE: {
+            newState = {...state};
+            return {...state, [action.profile.id]: action.profile}
+        }
+
         default:
             return state;
     }
