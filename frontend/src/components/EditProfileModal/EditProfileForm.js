@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router-dom";
 import { editProfile } from "../../store/profiles";
 
 const EditProfileForm = ({profile, showModal}) => {
-    // console.log('from EditProfileForm.js%%%%%%%', profile)
 
     const userId = useSelector(state => state.session.user.id)
     const [name, setName] = useState(profile.name)
@@ -14,7 +12,7 @@ const EditProfileForm = ({profile, showModal}) => {
     const [validationErrors, setValidationErrors] = useState([])
 
     const dispatch = useDispatch();
-    const history = useHistory();
+
 
     const validateEdit = () => {
         const validationErrors =[];

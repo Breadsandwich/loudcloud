@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { editSong } from "../../store/songs";
-import { useHistory } from "react-router-dom";
+
 
 function EditForm({song, showModal}) {
-
-  console.log('from EditForm.js%%%%%', song.id)
 
   const userId = useSelector(state => state.session.user.id)
   const [title, setTitle] = useState(song.title)
   const [imageUrl, setImageUrl] = useState(song.imageUrl)
   const [validationErrors, setValidationErrors] = useState([])
 
-  // console.log('userId from EditForm.js%%%%%', userId)
 
   const dispatch = useDispatch();
-  const history = useHistory();
+
 
 
 

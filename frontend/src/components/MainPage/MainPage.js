@@ -4,10 +4,7 @@ import { getAllSongs } from '../../store/songs';
 import { useParams } from 'react-router-dom';
 import EditSongModal from '../EditSongModal'
 import DeleteModal from '../DeleteModal';
-import match from '../../utils/match'
 import './MainPage.css'
-
-
 
 
 
@@ -15,15 +12,8 @@ const MainPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
 
-    const songsObj = useSelector((state) => state.songs)
-
+    const songsObj = useSelector(state => state.songs)
     const songs = Object.values(songsObj)
-
-    // console.log('from mainPage - #########', songs)
-
-
-
-    console.log('from main page2', sessionUser.username)
 
 
 
@@ -62,7 +52,7 @@ const MainPage = () => {
                             <audio className='audio_player' controls src={`${song.songUrl}`}></audio>
                             {/* <Player songUrl={song.songUrl}/> */}
                         </div>
-                            <h5>uploaded by: {sessionUser.username}</h5>
+
                     </div>
                 ))}
             </div>

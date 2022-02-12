@@ -6,12 +6,9 @@ import EditForm from './EditForm';
 
 function EditFormModal(props) {
   const [showModal, setShowModal] = useState(false);
+  
   const songUserId = props.song.userId
   const userId = useSelector(state => state.session.user.id)
-
-  // console.log('userId from EditModal/index', userId)
-  // console.log('songUserId from editModal/index', songUserId)
-  // // console.log('from EditSongModal/index', props.song)
   const matchingToSessionUser = match(userId, songUserId)
 
   return (

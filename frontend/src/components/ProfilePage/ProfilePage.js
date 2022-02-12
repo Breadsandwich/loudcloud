@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getProfile } from '../../store/profiles';
 import EditProfileModal from '../EditProfileModal';
 import './ProfilePage.css'
@@ -9,11 +9,10 @@ const ProfilePage = () => {
 
   const { id } = useParams();
   const dispatch = useDispatch();
-  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
-
   const profileObj = useSelector(state => state.profile)
   const profile = Object.values(profileObj)
+
 
   let sessionButtons;
   if (sessionUser)
@@ -24,9 +23,6 @@ const ProfilePage = () => {
       </>
     )
   }
-
-
-  // console.log('from ProfilePage:', sessionUser.username)
 
 
   useEffect(() => {
