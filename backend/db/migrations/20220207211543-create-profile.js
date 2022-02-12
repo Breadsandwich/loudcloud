@@ -18,13 +18,17 @@ module.exports = {
         defaultValue: 'https://www.robives.com/wp-content/uploads/2016/10/boombox-a600-600x600.jpg'
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: ' '
       },
       location: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: ' '
+
       },
       bio: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        defaultValue: ' '
       },
       createdAt: {
         allowNull: false,
