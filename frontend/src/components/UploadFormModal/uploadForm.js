@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import './uploadForm.css'
 
 
-function UploadForm() {
+function UploadForm({showModal}) {
     const [title, setTitle] = useState('');
     const [songUrl, setSongUrl] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -22,7 +22,7 @@ function UploadForm() {
         if (!title) validationErrors.push('Please provide a Song Title.')
         if (title.length > 255) validationErrors.push('Song Title cannot have more than 255 characters')
         if (!songUrl.endsWith('.mp3')) validationErrors.push('Song url must be valid .mp3 link')
-        if (!imageUrl.endsWith('.jpg')) validationErrors.push('Image url must be valid .png, .jpg, or .jpeg link')
+        if (!imageUrl.endsWith('.jpg')) validationErrors.push('Image url must be valid .jpg link')
 
         return validationErrors;
     }

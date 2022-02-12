@@ -12,7 +12,7 @@ function UploadFormModal() {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UploadForm />
+          <UploadForm showModal={setShowModal}/>
         </Modal>
       )}
     </>

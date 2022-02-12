@@ -12,12 +12,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     name: {
       type: DataTypes.STRING,
+      defaultValue: ' '
     },
     location: {
       type: DataTypes.STRING,
+      defaultValue: ' '
     },
     bio: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      defaultValue: ' '
     }
   }, {});
   Profile.associate = function(models) {
