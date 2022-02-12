@@ -51,7 +51,7 @@ const ProfilePage = () => {
               <h3>Hello I'm {`${userProfile.name}`}</h3>
               <h4>location</h4>
                 <p className='bio_text'>I'm from {`${userProfile.location}`}</p>
-              <h4>biooooooooooooooooooooooooooo</h4>
+              <h4>Bio</h4>
                 <p className='bio_text'>{`${userProfile.bio}`}</p>
             </div>
             <div id='profile_actions'>

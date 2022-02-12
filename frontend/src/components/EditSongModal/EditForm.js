@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { editSong } from "../../store/songs";
 import { useHistory } from "react-router-dom";
 
-function EditForm({song}) {
+function EditForm({song, showModal}) {
 
   console.log('from EditForm.js%%%%%', song.id)
 
@@ -46,7 +46,7 @@ function EditForm({song}) {
 
     let updatedSong = await dispatch(editSong(payload, song.id))
     if (updatedSong) {
-        history.push('/')
+        showModal(false)
 
     }
 }
@@ -68,7 +68,7 @@ function EditForm({song}) {
       <h2>Edit</h2>
       <input type="text" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)}  />
       <input type="text" placeholder="Image Url" value={imageUrl} onChange={e => setImageUrl(e.target.value)} />
-      <button type="submit">Submit Edit</button>
+      <button type="submit" className="button1">Submit Edit</button>
 
       <div className="support_label">
         <p>Image Url only supports .jpg*</p>

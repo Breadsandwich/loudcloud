@@ -67,12 +67,12 @@ const EditProfileForm = ({profile, showModal}) => {
                 name="bio"
                 id="bio_textarea"
                 cols="30"
-                rows="5"
+                rows="3"
                 placeholder="Tell us something about you"
                 value={bio}
                 onChange={e => setBio(e.target.value)}
             />
-            <button type="submit">Submit Changes</button>
+            <button className="button1" type="submit">Submit</button>
 
         </form>
     )

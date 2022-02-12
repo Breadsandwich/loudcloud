@@ -13,7 +13,7 @@ function DeleteModal(props) {
   return (
     matchingToSessionUser && (
       <>
-      <button onClick={() => setShowModal(true)} className='delete_button'>
+      <button onClick={() => setShowModal(true)} className='button2'>
         Delete
       </button>
       {showModal && (
