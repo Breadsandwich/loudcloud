@@ -23,7 +23,7 @@ const MainPage = () => {
 
 
 
-    // console.log('from main page2', sessionUser.id)
+    console.log('from main page2', sessionUser.username)
 
 
 
@@ -62,6 +62,7 @@ const MainPage = () => {
                             <audio className='audio_player' controls src={`${song.songUrl}`}></audio>
                             {/* <Player songUrl={song.songUrl}/> */}
                         </div>
+                            <h5>uploaded by: {sessionUser.username}</h5>
                     </div>
                 ))}
             </div>

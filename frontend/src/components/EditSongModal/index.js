@@ -17,12 +17,12 @@ function EditFormModal(props) {
   return (
     matchingToSessionUser && (
       <>
-      <button onClick={() => setShowModal(true)} className='edit_button'>
+      <button onClick={() => setShowModal(true)} className='button2'>
         edit
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <EditForm song={props.song}/>
+          <EditForm song={props.song} showModal={setShowModal}/>
         </Modal>
       )}
     </>

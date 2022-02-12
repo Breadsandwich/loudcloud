@@ -13,18 +13,14 @@ function DeleteForm({song, hideform}) {
         hideform();
     }
 
-    const handleCancel = e => {
-        e.preventDefault();
-        hideform();
-    }
+
 
     return (
         <form className="delete_form">
             <h3>Are you sure?</h3>
 
             <div>
-                <button className="delete_yes_btn" onClick={handleSubmit}>yes</button>
-                <button className="delete_cancel_btn" onClick={handleCancel}>cancel</button>
+                <button className="button1" onClick={handleSubmit}>yes</button>
             </div>
         </form>
     )

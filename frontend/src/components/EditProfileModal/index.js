@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import match from '../../utils/match';
 import EditProfileForm from './EditProfileForm';
+import './EditProfile.css'
 
 function EditProfileModal(props) {
     const [showModal, setShowModal] = useState(false);
@@ -13,7 +14,7 @@ function EditProfileModal(props) {
     const matchingToSessionUser = match(userId, profileUserId)
 
     return (
-    //   matchingToSessionUser && (
+      matchingToSessionUser && (
         <>
         <button onClick={() => setShowModal(true)} className='edit_Profile_button'>
           edit
@@ -24,7 +25,7 @@ function EditProfileModal(props) {
           </Modal>
         )}
       </>
-    //   )
+      )
     );
   }
 

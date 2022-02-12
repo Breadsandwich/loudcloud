@@ -1,0 +1,10 @@
+.edit_button{
+    background: transparent;
+    border: none;
+    color: #FE5000;
+}
+
+.edit_button:hover {
+    border: #FE5000 solid 1px;
+    background-color: #f2f2f2;
+}
