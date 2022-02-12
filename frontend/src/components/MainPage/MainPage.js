@@ -50,7 +50,6 @@ const MainPage = () => {
                         </div>
                         <div className='audio_div'>
                             <audio className='audio_player' controls src={`${song.songUrl}`}></audio>
-                            {/* <Player songUrl={song.songUrl}/> */}
                         </div>
 
                     </div>
