@@ -3,16 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProfile } from '../../store/profiles';
 import EditProfileModal from '../EditProfileModal';
+import { useHistory } from 'react-router-dom';
 import './ProfilePage.css'
 
 const ProfilePage = () => {
 
   const { id } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
   const profileObj = useSelector(state => state.profile)
   const profile = Object.values(profileObj)
 
+  if(!sessionUser) {
+    history.push('/')
+  }
 
   let sessionButtons;
   if (sessionUser)

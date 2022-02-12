@@ -52,10 +52,14 @@
 
 }
 
-.footer-links {
-    color: whitesmoke;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+.footer_element{
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+.footer-icon{
+    font-size: 40px;
+}
+.splash_txt {
+    color: whitesmoke;
 }

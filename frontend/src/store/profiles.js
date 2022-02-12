@@ -25,7 +25,6 @@ export const getProfile = (id) => async (dispatch) => {
         const data = await response.json();
         dispatch(loadProfile(data))
     }
-    // console.log('load profile thunk', response)
     return response
 }
 

@@ -7,6 +7,7 @@ import SplashPage from "./components/SplashPage/SplashPage";
 import MainPage from "./components/MainPage/MainPage";
 import { restoreUser } from "./store/session";
 import ProfilePage from './components/ProfilePage/ProfilePage'
+import NotFound from "./components/NotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ function App() {
           </Route>
 
           <Route>
-            {/** profile page */}
+            <NotFound path='/' />
           </Route>
         </Switch>
       )}
