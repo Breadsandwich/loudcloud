@@ -59,6 +59,8 @@ const ProfilePage = () => {
                 {sessionUser && sessionButtons(userProfile)}
             </div>
           </div>
+
+          <div id='c'></div>
         </div>
     ))}
     </>
