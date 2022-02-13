@@ -61,11 +61,16 @@ const ProfilePage = () => {
           </div>
 
           <div id='c'>
-             <div className='album_block'></div>
-             <div className='album_block'></div>
-             <div className='album_block'></div>
-             <div className='album_block'></div>
-             <div className='album_block'></div>
+            <h2>Recommended Songs</h2>
+            <div className='album_container'>
+             <div className='album_block1'></div>
+             <div className='album_block2'></div>
+             <div className='album_block3'></div>
+             <div className='album_block4'></div>
+             <div className='album_block5'></div>
+             <div className='album_block6'></div>
+            </div>
+             {/* <div className='album_block7'></div> */}
           </div>
         </div>
     ))}
