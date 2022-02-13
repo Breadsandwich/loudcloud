@@ -18,7 +18,7 @@ function DeleteModal(props) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <DeleteForm song={props.song}/>
+          <DeleteForm song={props.song} showModal={setShowModal}/>
         </Modal>
       )}
     </>

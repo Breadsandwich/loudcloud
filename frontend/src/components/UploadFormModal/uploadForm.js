@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { uploadNewSong } from "../../store/songs";
+import { uploadNewSong, getAllSongs } from "../../store/songs";
 import { useHistory } from 'react-router-dom';
 import './uploadForm.css'
 
@@ -28,7 +28,7 @@ function UploadForm({showModal}) {
     }
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
 
         const payload = {
@@ -45,9 +45,13 @@ function UploadForm({showModal}) {
 
         const uploadedSong = await dispatch(uploadNewSong(payload))
         if (uploadedSong) {
-            history.push('/')
+            await dispatch(getAllSongs())
+            showModal(false)
+
         }
     }
+
+
 
 
     return (
