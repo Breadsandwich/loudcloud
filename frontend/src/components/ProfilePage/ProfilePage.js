@@ -49,9 +49,9 @@ const ProfilePage = () => {
           <div id='b'>
             <h2 className='profile_label'>my profile</h2>
             <div className='user_details_box'>
-              <h3>Hello I'm {`${userProfile.name}`}</h3>
-              <h4>location</h4>
-                <p className='bio_text'>I'm from {`${userProfile.location}`}</p>
+              <h3>Name: {`${userProfile.name}`}</h3>
+              <h4>location:</h4>
+                <p className='bio_text'>{`${userProfile.location}`}</p>
               <h4>Bio</h4>
                 <p className='bio_text'>{`${userProfile.bio}`}</p>
             </div>
@@ -60,7 +60,13 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          <div id='c'></div>
+          <div id='c'>
+             <div className='album_block'></div>
+             <div className='album_block'></div>
+             <div className='album_block'></div>
+             <div className='album_block'></div>
+             <div className='album_block'></div>
+          </div>
         </div>
     ))}
     </>
