@@ -49,9 +49,8 @@ const EditProfileForm = ({profile, showModal}) => {
             <ul className="edit_error_msg">
             {validationErrors.length > 0 && (
                 <div>
-                    The Following errors were found:
                     <ul>
-                        {validationErrors.map(error => <li key={error}>{error}</li>)}
+                        {validationErrors.map(error => <li key={error} className='edit_error'>{error}</li>)}
                     </ul>
                 </div>
                 )}
