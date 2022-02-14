@@ -7,6 +7,8 @@
     grid-template-areas:
                 "a b b"
                 "a b b"
+                "a b b"
+                "a b b"
                 "c c c";
 }
 
@@ -105,7 +107,8 @@
     background-color: aqua;
     background-image: url('https://i1.sndcdn.com/artworks-000247738003-ifdofw-t500x500.jpg');
     background-position: center;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }
 
@@ -114,7 +117,8 @@
     height: 200px;
     background-color: aqua;
     background-image: url('https://i1.sndcdn.com/artworks-nGmBzCAoJEXSnwTw-sd7iGQ-t500x500.jpg');
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }
 #c > .album_container > .album_block3 {
@@ -123,7 +127,8 @@
     background-color: aqua;
     background-image: url('https://i1.sndcdn.com/artworks-000529584489-wnbbvp-t500x500.jpg');
     background-position: center;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }
 
@@ -133,7 +138,8 @@
     background-color: aqua;
     background-image: url('https://i1.sndcdn.com/avatars-000001889247-t519rv-t500x500.jpg');
     background-position: center;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }
 
@@ -143,7 +149,8 @@
     background-color: aqua;
     background-image: url('https://i1.sndcdn.com/artworks-000020056702-95x314-t500x500.jpg');
     background-position: center;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }
 
@@ -153,7 +160,8 @@
     background-color: aqua;
     background-image: url('https://i1.sndcdn.com/artworks-000043371872-2haw1t-t500x500.jpg');
     background-position: center;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }
 
@@ -161,6 +169,7 @@
     width: 200px ;
     height: 200px;
     background-color: aqua;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px
 
 }

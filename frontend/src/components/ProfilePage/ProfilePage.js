@@ -47,16 +47,18 @@ const ProfilePage = () => {
           </div>
 
           <div id='b'>
+            <div id='profile_actions'>
+                {sessionUser && sessionButtons(userProfile)}
+            </div>
             <h2 className='profile_label'>my profile</h2>
             <div className='user_details_box'>
               <h3>Name: {`${userProfile.name}`}</h3>
               <h4>location:</h4>
                 <p className='bio_text'>{`${userProfile.location}`}</p>
               <h4>Bio</h4>
+              <div className='bio_textbox'>
                 <p className='bio_text'>{`${userProfile.bio}`}</p>
-            </div>
-            <div id='profile_actions'>
-                {sessionUser && sessionButtons(userProfile)}
+              </div>
             </div>
           </div>
 
