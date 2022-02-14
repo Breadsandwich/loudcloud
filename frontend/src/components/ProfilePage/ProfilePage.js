@@ -71,8 +71,8 @@ const ProfilePage = () => {
              <div className='album_block4'></div>
              <div className='album_block5'></div>
              <div className='album_block6'></div>
+             <div className='album_block7'></div>
             </div>
-             {/* <div className='album_block7'></div> */}
           </div>
         </div>
     ))}
