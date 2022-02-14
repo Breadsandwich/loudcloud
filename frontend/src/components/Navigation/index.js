@@ -32,8 +32,9 @@ function Navigation({ isLoaded }){
   return (
     <div id='navbar'>
       <button className='logo_btn'>
-        <NavLink exact to={'/'}></NavLink>
-      <i className="fab fa-soundcloud"></i>
+        <NavLink exact to={'/'}>
+          <i className="fab fa-soundcloud"></i>
+        </NavLink>
       </button>
     <div id='nav-center'>
     <NavLink exact to="/" className='nav-labels'>LoudCloud</NavLink>
