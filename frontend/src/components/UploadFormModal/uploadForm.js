@@ -28,6 +28,16 @@ function UploadForm({showModal}) {
         return validationErrors;
     }
 
+    // handling a submit bug --- line 59
+    // Problem: When submitting the upload action, the action would occur and
+    //          upload the element we wanted. We would see it update with a new element
+    //          with 'undefined' inside the new element along with a '404' error.
+
+    // Solution: What was happening was, page was re-rendering our dispatch thunk to upload
+    //           our new song but we also need to use our dispatch to get all the new data which
+    //           was updated in our backend. I added a dispatch to 'getAllSongs' in order to
+    //           fetch our new state when the re-render occurs.
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
