@@ -6,7 +6,7 @@ import EditForm from './EditForm';
 
 function EditFormModal(props) {
   const [showModal, setShowModal] = useState(false);
-  
+
   const songUserId = props.song.userId
   const userId = useSelector(state => state.session.user.id)
   const matchingToSessionUser = match(userId, songUserId)
@@ -15,7 +15,7 @@ function EditFormModal(props) {
     matchingToSessionUser && (
       <>
       <button onClick={() => setShowModal(true)} className='button2'>
-        edit
+        Edit
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

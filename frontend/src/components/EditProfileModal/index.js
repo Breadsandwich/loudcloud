@@ -9,7 +9,7 @@ function EditProfileModal(props) {
     const [showModal, setShowModal] = useState(false);
     const profileUserId = props.profile.userId
     const userId = useSelector(state => state.session.user.id)
-  
+
 
     const matchingToSessionUser = match(userId, profileUserId)
 
@@ -17,7 +17,7 @@ function EditProfileModal(props) {
       matchingToSessionUser && (
         <>
         <button onClick={() => setShowModal(true)} className='edit_Profile_button'>
-          edit
+          Edit
         </button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
