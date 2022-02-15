@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { uploadNewSong, getAllSongs } from "../../store/songs";
 import { useHistory } from 'react-router-dom';
 import './uploadForm.css'
-import { Redirect } from "react-router-dom";
+
 
 
 function UploadForm({showModal}) {
