@@ -73,6 +73,7 @@
 .about_txt{
     color: whitesmoke;
     margin: 5px;
+    text-decoration: none;
 }
 
 .technologies{

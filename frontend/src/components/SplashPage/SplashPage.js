@@ -24,7 +24,9 @@ const SplashPage = ({isLoaded}) => {
         <footer id="footer-bar">
 
           <div className='footer_element'>
-            <h4 className='about_txt'>LoudCloud By: Daniel Thai</h4>
+            <a href="https://github.com/Breadsandwich" className='about_txt' target='_blank'>
+              <h4 className='about_txt'>LoudCloud By: Daniel Thai</h4>
+            </a>
           </div>
 
           <div className='technologies'>
