@@ -37,7 +37,7 @@ const MainPage = () => {
 
     return (
             <div className="main_content_container">
-                {songs.map(song => (
+                {songs.reverse().map(song => (
                     <div key={`song-${song.id}`} className='songlist_item'>
                         <div className='song_detail_box'>
                             <h2>{song.title}</h2>
