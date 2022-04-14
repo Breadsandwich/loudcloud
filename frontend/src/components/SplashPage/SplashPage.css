@@ -44,17 +44,23 @@
 
 #footer-bar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: fixed;
     justify-content: space-between;
     background-color: #333;
     bottom: 0;
-
+    width: 70%;
 }
 
 .footer_element{
+    display: flex;
+    position: relative;
     padding-left: 20px;
     padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+
 }
 
 .footer-icon{
@@ -62,4 +68,25 @@
 }
 .splash_txt {
     color: whitesmoke;
+}
+
+.about_txt{
+    color: whitesmoke;
+    margin: 5px;
+}
+
+.technologies{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+}
+
+.technologies > div {
+    color: whitesmoke;
+    margin: 5px;
+    font-size: 12pt;
+
 }

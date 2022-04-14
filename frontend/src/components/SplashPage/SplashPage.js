@@ -24,18 +24,19 @@ const SplashPage = ({isLoaded}) => {
         <footer id="footer-bar">
 
           <div className='footer_element'>
-            <h4 className='splash_txt'>LoudCloud By: Daniel Thai</h4>
-          </div>
-          <div className='footer_element'>
-            <a href="https://github.com/Breadsandwich" className="footer-icon" target='_blank'>
-              <i className='fab fa-github' />
-            </a>
+            <h4 className='about_txt'>LoudCloud By: Daniel Thai</h4>
           </div>
 
-          <div className='footer_element'>
-            <a href="https://www.linkedin.com/in/daniel--thai/" className='footer-icon' target='_blank'>
-              <i className='fab fa-linkedin' />
-            </a>
+          <div className='technologies'>
+            <div>JavaScript</div>
+            <div>PostgreSQL</div>
+            <div>Express</div>
+            <div>React</div>
+            <div>Redux</div>
+            <div>Node.js</div>
+            <div>Sequelize</div>
+            <div>HTML</div>
+            <div>CSS</div>
           </div>
         </footer>
       </>
