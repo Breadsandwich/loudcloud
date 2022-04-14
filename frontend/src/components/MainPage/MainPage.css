@@ -7,7 +7,7 @@
     flex-direction: column;
     top: 40px;
     height: 99%;
-    width: 70%;
+    min-width: 70%;
     background-color:rgba(255, 255, 255, 0.904);
     background-position: bottom;
     justify-content: center;
@@ -58,5 +58,28 @@
 .audio_player {
     display: block;
     width: 1000px;
+
+}
+
+@media only screen and (max-width: 750px) {
+    .audio_player{
+        width: 650px;
+    }
+
+    .main_content_container{
+        width: auto;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+    .audio_player{
+        width: 450px;
+    }
+
+    .main_content_container{
+        width: auto;
+    }
 
 }

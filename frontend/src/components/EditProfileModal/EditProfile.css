@@ -2,6 +2,8 @@
     background: transparent;
     border: none;
     color: #FE5000;
+    border: transparent solid 1px;
+
 }
 
 .edit_Profile_button:hover {

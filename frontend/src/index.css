@@ -39,6 +39,7 @@ img{
     background: transparent;
     border: none;
     color: #FE5000;
+    border: transparent solid 1px;
 }
 
 .button2:hover {

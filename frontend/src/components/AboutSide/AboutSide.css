@@ -1,10 +1,39 @@
 .sidePanel{
     display: flex;
     position: absolute;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #333;
-    width: 100px;
+    width: 70px;
     height: 100px;
-    left: 0;
+    left: -40px;
     top: 55px;
+}
+
+.sidePanel:hover{
+    transform: translateX(40px);
+    transition-delay: 250ms;
+    transition-duration: 400ms;
+}
+
+.right{
+    display: flex;
+    position: relative;
+    justify-content: end;
+    align-items: center;
+}
+
+.arrow_icon{
+    display: flex;
+    position: relative;
+    font-size: 50px;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    left: 5px;
+    cursor: help;
+
+}
+
+.panel_element{
+
 }

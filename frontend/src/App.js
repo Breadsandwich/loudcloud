@@ -8,6 +8,7 @@ import MainPage from "./components/MainPage/MainPage";
 import { restoreUser } from "./store/session";
 import ProfilePage from './components/ProfilePage/ProfilePage'
 import NotFound from "./components/NotFound";
+import AboutSide from "./components/AboutSide/AboutSide.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <>
+      <AboutSide />
       <Navigation isLoaded={isLoaded}  loggedIn={loggedIn} />
       {isLoaded && (
         <Switch>
@@ -40,6 +42,7 @@ function App() {
             <NotFound path='/' />
           </Route>
         </Switch>
+
       )}
     </>
   );
